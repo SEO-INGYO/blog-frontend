@@ -1,0 +1,18 @@
+@import url("animate.css");
+@font-face {
+  font-family: "Pretendard Light";
+  src: url("/fonts/Pretendard-Light.woff2") format("woff2"), url("/fonts/Pretendard-Light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: "Pretendard Light", Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #343a40;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}/*# sourceMappingURL=style.css.map */
