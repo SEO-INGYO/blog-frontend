@@ -1,16 +1,14 @@
 <template>
     <v-toolbar class="navigation-bar position-sticky" color="transparent" width="100%">
         <v-toolbar-title>
-            <NuxtLink to="/" class="navigation-title">저장소</NuxtLink>
+            <v-btn :to="{ path: '/' }" class="navigation-title">저장소</v-btn>
         </v-toolbar-title>
         <v-toolbar-items>
-            <v-btn><NuxtLink to="/development" class="navigation-title">development</NuxtLink></v-btn>
-            <v-btn><NuxtLink to="/game" class="navigation-title">game</NuxtLink></v-btn>
-            <v-btn><NuxtLink to="/design" class="navigation-title">design</NuxtLink></v-btn>
+            <v-btn :to="{ path: '/posts' }" class="navigation-title">블로그</v-btn>
         </v-toolbar-items>
         <v-spacer></v-spacer>
         <v-toolbar-items>
-            <v-btn><NuxtLink to="/contact" class="navigation-title">contact</NuxtLink></v-btn>
+            <v-btn :to="{ path: '/contact' }" class="navigation-title">소개</v-btn>
         </v-toolbar-items>
     </v-toolbar>
 </template>

@@ -1,6 +1,7 @@
 declare interface IPost {
+    id: number;
     title: string;
     content: string;
-    createdDate: string;
-    categoryName: string
+    createdTime: string;
+    category: string
   }
