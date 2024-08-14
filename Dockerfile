@@ -1,26 +1,24 @@
-# 1단계: 빌드 스테이지
-FROM node:18 as build-stage
+# Build stage
+FROM node:18 AS build-stage
 
 WORKDIR /app
 
 COPY package*.json ./
-
 RUN npm install
 
 COPY . .
 
 RUN npm run build
 
-# 2단계: 프로덕션 스테이지
-FROM node:18 as production-stage
-
-ENV NODE_ENV=production
+# Production stage
+FROM node:18 AS production-stage
 
 WORKDIR /app
 
 COPY --from=build-stage /app ./
 
-RUN npm install --production
+# install only production dependencies
+RUN npm ci --omit=dev
 
 EXPOSE 3000
 

@@ -52,8 +52,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
-
 const url = `http://localhost:8080/api/posts`;
 const encodedUrl = encodeURI(url);
 
