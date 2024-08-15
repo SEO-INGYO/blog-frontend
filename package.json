@@ -7,7 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "start": "nuxt start"
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
@@ -15,8 +16,7 @@
     "d3": "^7.9.0",
     "gsap": "^3.12.5",
     "nuxt": "^3.12.3",
-    "package.json": "^2.0.1",
-    "vue": "latest"
+    "vue": "^3.2.0"
   },
   "devDependencies": {
     "vite-plugin-vuetify": "^2.0.3",
