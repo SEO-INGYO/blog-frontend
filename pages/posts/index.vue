@@ -52,7 +52,7 @@
 </template>
 
 <script setup lang="ts">
-const url = `http://localhost:8080/api/posts`;
+const url = `https://blog-admin.rocd.site/api/posts`;
 const encodedUrl = encodeURI(url);
 
 const commandPosts = ref<IPost[]>([]);
