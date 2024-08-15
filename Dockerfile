@@ -20,6 +20,9 @@ COPY --from=builder /app/.output ./.output
 COPY --from=builder /app/package.json ./
 COPY --from=builder /app/package-lock.json ./
 
+# 환경 변수 설정
+ENV NODE_ENV=production
+
 # 프로덕션 의존성만 설치
 RUN npm ci --only=production
 
