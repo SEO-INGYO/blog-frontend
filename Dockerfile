@@ -1,32 +1,34 @@
-# 1. 빌드 스테이지
-FROM node:lts AS builder
+# syntax = docker/dockerfile:1
 
-WORKDIR /app
+ARG NODE_VERSION=18.14.2
 
-COPY package.json package-lock.json ./
+FROM node:${NODE_VERSION}-slim as base
 
-RUN npm ci
+ARG PORT=3000
 
-COPY . .
-
-RUN npm run build
-
-# 2. 프로덕션 스테이지
-FROM node:lts-alpine AS production
-
-WORKDIR /app
-
-COPY --from=builder /app/.output ./.output
-COPY --from=builder /app/package.json ./
-COPY --from=builder /app/package-lock.json ./
-
-# 환경 변수 설정
 ENV NODE_ENV=production
 
-# 프로덕션 의존성만 설치
-RUN npm ci --only=production
+WORKDIR /src
 
-EXPOSE 3000
+# Build
+FROM base as build
+
+COPY --link package.json package-lock.json .
+RUN npm install --production=false
+
+COPY --link . .
+
+RUN npm run build
+RUN npm prune
+
+# Run
+FROM base
+
+ENV PORT=$PORT
+
+COPY --from=build /src/.output /src/.output
+# Optional, only needed if you rely on unbundled dependencies
+# COPY --from=build /src/node_modules /src/node_modules
 
 # 직접 Node.js로 서버 실행
 CMD ["node", ".output/server/index.mjs"]
