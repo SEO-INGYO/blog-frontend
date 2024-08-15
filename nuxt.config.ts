@@ -22,4 +22,4 @@ export default defineNuxtConfig({
   },
   plugins: ['~/plugins/google-analytics.ts'],
   css: ['~/assets/stylesheet/style.css']
-})
+})  
