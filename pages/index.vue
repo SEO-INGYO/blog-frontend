@@ -36,7 +36,7 @@ const imageHeight = '500';
 const section1 = ref(null);
 const section2 = ref(null);
 
-const url = `http://localhost:8080/api/posts`;
+const url = `https://blog-admin.rocd.site/api/posts`;
 const encodedUrl = encodeURI(url);
 
 const posts = ref<IPost[]>([]);
