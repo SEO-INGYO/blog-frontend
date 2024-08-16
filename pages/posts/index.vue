@@ -59,18 +59,18 @@ const commandPosts = ref<IPost[]>([]);
 const syntaxPosts = ref<IPost[]>([]);
 
 const { data: commandData, error: commandError } = await useFetch<IPost[]>(encodedUrl, {
-  query: { category: '명령어', limit: 5, sortType: 'latest' }
+  query: { category: '명령어', limit: 100, sortType: 'latest' }
 });
 
 const { data: syntaxData, error: syntaxError } = await useFetch<IPost[]>(encodedUrl, {
-  query: { category: '문법', limit: 5, sortType: 'latest' }
+  query: { category: '문법', limit: 100, sortType: 'latest' }
 });
 
 const loading = ref(true);
-const router = useRouter(); // Vue Router 인스턴스 가져오기
+const router = useRouter();
 
 const goToPost = (postId: number) => {
-  router.push(`/posts/${postId}`); // 게시글의 상세 페이지로 이동
+  router.push(`/posts/${postId}`);
 };
 
 onMounted(() => {
