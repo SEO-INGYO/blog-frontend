@@ -16,7 +16,7 @@ onMounted(() => {
     script2.innerHTML = `
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date()); q 
+      gtag('js', new Date());
       gtag('config', 'G-5NZS5PW33L');
     `;
     document.head.appendChild(script2);
