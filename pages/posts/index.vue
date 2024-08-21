@@ -55,14 +55,14 @@
 const url = `https://blog-admin.rocd.site/api/posts`;
 const encodedUrl = encodeURI(url);
 
-const commandPosts = ref<IPost[]>([]);
-const syntaxPosts = ref<IPost[]>([]);
+const commandPosts = ref<Post[]>([]);
+const syntaxPosts = ref<Post[]>([]);
 
-const { data: commandData, error: commandError } = await useFetch<IPost[]>(encodedUrl, {
+const { data: commandData, error: commandError } = await useFetch<Post[]>(encodedUrl, {
   query: { category: '명령어', limit: 100, sortType: 'latest' }
 });
 
-const { data: syntaxData, error: syntaxError } = await useFetch<IPost[]>(encodedUrl, {
+const { data: syntaxData, error: syntaxError } = await useFetch<Post[]>(encodedUrl, {
   query: { category: '문법', limit: 100, sortType: 'latest' }
 });
 

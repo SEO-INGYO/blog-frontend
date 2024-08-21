@@ -10,12 +10,8 @@
         <v-col>
           <v-sheet color="pa-5" rounded="lg">
             <section ref="section1">
-              <h2>Latest Posts</h2>
-              <p>This is the latest post section.</p>
             </section>
             <section ref="section2" class="section">
-              <h2>About Me</h2>
-              <p>This is the about me section.</p>
             </section>
           </v-sheet>
         </v-col>
@@ -39,8 +35,8 @@ const section2 = ref(null);
 const url = `https://blog-admin.rocd.site/api/posts`;
 const encodedUrl = encodeURI(url);
 
-const posts = ref<IPost[]>([]);
-const { data, error } = await useFetch<IPost[]>(encodedUrl, {
+const posts = ref<Post[]>([]);
+const { data, error } = await useFetch<Post[]>(encodedUrl, {
   query: { limit: 5, sortType: 'latest' }
 });
 
