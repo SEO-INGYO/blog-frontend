@@ -5,13 +5,10 @@
         <v-col>
           <v-sheet color="pa-5" rounded="lg">
             <div class="text-h6 text-md-h5 text-center">명령어</div>
-            <!-- 로딩 상태 표시 -->
             <v-progress-circular v-if="loading" indeterminate color="primary" class="mx-auto"></v-progress-circular>
-            <!-- 에러 메시지 표시 -->
             <v-alert v-if="commandError" type="error" dismissible>
               데이터 로딩 중 오류가 발생했습니다: {{ commandError.message }}
             </v-alert>
-            <!-- 데이터 표시 -->
             <v-data-iterator v-if="!loading && !commandError" :items="commandPosts">
               <template v-slot:default="{ items }">
                 <v-list-item
@@ -27,13 +24,10 @@
         <v-col>
           <v-sheet color="pa-5" rounded="lg">
             <div class="text-h6 text-md-h5 text-center">문법</div>
-            <!-- 로딩 상태 표시 -->
             <v-progress-circular v-if="loading" indeterminate color="primary" class="mx-auto"></v-progress-circular>
-            <!-- 에러 메시지 표시 -->
             <v-alert v-if="syntaxError" type="error" dismissible>
               데이터 로딩 중 오류가 발생했습니다: {{ syntaxError.message }}
             </v-alert>
-            <!-- 데이터 표시 -->
             <v-data-iterator v-if="!loading && !syntaxError" :items="syntaxPosts">
               <template v-slot:default="{ items }">
                 <v-list-item

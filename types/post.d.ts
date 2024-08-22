@@ -16,7 +16,3 @@ declare interface Post {
   tags: Tag[];
   createdTime: string;
 }
-
-declare interface WrappedPost {
-  _value: Post;
-}
