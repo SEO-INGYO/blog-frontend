@@ -4,7 +4,7 @@
       <div v-if="pending">Loading...</div>
       <div v-else-if="error">Error: {{ error.message || 'An error occurred' }}</div>
       <v-card class="pa-6" v-else-if="postData"
-        title={{ postData.title }}
+        :title="postData.title"
         v-html="renderedContent"
       ></v-card>
     </v-container>
@@ -13,6 +13,8 @@
 
 <script setup lang="ts">
 import MarkdownIt from 'markdown-it';
+import { computed } from 'vue';
+import { useRoute, useFetch } from '#imports';
 
 const route = useRoute();
 const id = route.params.id;
