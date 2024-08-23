@@ -1,10 +1,5 @@
 <template>
   <v-main>
-    <!-- 상단 이미지 배경 영역 -->
-    <section class="position-relative top-0 mb-10">
-      <ImageSection :imageSrc="imageSrc" :imageWidth="imageWidth" :imageHeight="imageHeight"/>
-    </section>
-    
     <v-container class="main-container">
       <v-row class="mx-auto">
         <v-col>

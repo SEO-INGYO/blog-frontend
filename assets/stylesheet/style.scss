@@ -12,8 +12,11 @@ body {
   font-family: 'Pretendard Light', Arial, sans-serif;
 }
 
-.main-body {
-  color: #424242;
+.main-content {
+  min-width: 50em;
+  max-width: 60em;
+  margin: 0 auto;
+  padding-top: 2.5rem;
 }
 
 .v-card-subtitle {

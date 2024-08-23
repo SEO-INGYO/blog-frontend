@@ -11,17 +11,12 @@
             <v-card-text>
               <v-row justify="center">
                 <v-col cols="12" md="12">
-                  <v-icon left color="primary">mdi-email</v-icon> email@example.com
+                  <v-icon left color="primary">mdi-email</v-icon> saingo4202@gmail.com
                 </v-col>
               </v-row>
               <v-row justify="center">
                 <v-col cols="12" md="12">
-                  <v-icon left color="primary">mdi-phone</v-icon> +123 456 7890
-                </v-col>
-              </v-row>
-              <v-row justify="center">
-                <v-col cols="12" md="12">
-                  <v-icon left color="primary">mdi-linkedin</v-icon> LinkedIn
+                  <v-icon left color="primary">mdi-github</v-icon> https://github.com/SEO-INGYO
                 </v-col>
               </v-row>
             </v-card-text>
