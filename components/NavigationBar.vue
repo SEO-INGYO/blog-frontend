@@ -1,19 +1,37 @@
 <template>
-    <v-toolbar class="navigation-bar position-sticky" color="transparent" width="100%">
-        <v-toolbar-title>
-            <v-btn :to="{ path: '/' }" class="navigation-title">저장소</v-btn>
-        </v-toolbar-title>
-        <v-toolbar-items>
-            <v-btn :to="{ path: '/posts' }" class="navigation-title">블로그</v-btn>
-        </v-toolbar-items>
-        <v-spacer></v-spacer>
-        <v-toolbar-items>
-            <v-btn :to="{ path: '/contact' }" class="navigation-title">소개</v-btn>
-        </v-toolbar-items>
-    </v-toolbar>
+    <!-- 앱 바 (헤더) -->
+    <v-app-bar app>
+      <!-- 모바일에서 햄버거 메뉴 -->
+      <v-app-bar-nav-icon @click="drawer = !drawer" class="d-sm-none"></v-app-bar-nav-icon>
+      
+      <!-- 로고 -->
+      <v-toolbar-title>Blog</v-toolbar-title>
+
+      <!-- 네비게이션 링크 (큰 화면) -->
+      <v-spacer></v-spacer>
+      <v-btn :to="{ path: '/' }" class="d-none d-sm-flex">Home</v-btn>
+      <v-btn :to="{ path: '/posts' }" class="d-none d-sm-flex">Post</v-btn>
+      <v-btn :to="{ path: '/contact' }" class="d-none d-sm-flex">Contact</v-btn>
+    </v-app-bar>
+
+    <!-- 네비게이션 드로어 (모바일) -->
+    <v-navigation-drawer v-model="drawer" app temporary class="d-sm-none">
+      <v-list>
+        <v-list-item :to="{ path: '/' }" link>
+          <v-list-item-title>Home</v-list-item-title>
+        </v-list-item>
+        <v-list-item :to="{ path: '/posts' }" link>
+          <v-list-item-title>Post</v-list-item-title>
+        </v-list-item>
+        <v-list-item :to="{ path: '/contact' }" link>
+          <v-list-item-title>Contact</v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
 </template>
 
 <script setup lang="ts">
+const drawer = ref(false)
 </script>
 
 <style scoped>

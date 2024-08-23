@@ -1,25 +1,99 @@
 @import url("animate.css");
 
 @font-face {
-    font-family: 'Pretendard Light';
-    src: url('/fonts/Pretendard-Light.woff2') format('woff2'),
-    url('/fonts/Pretendard-Light.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-  
-body {
-    font-family: 'Pretendard Light', Arial, sans-serif;
-    background-color: #f8f9fa;
-    color: #343a40;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
+  font-family: 'Pretendard Light';
+  src: url('/fonts/Pretendard-Light.woff2') format('woff2'),
+  url('/fonts/Pretendard-Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
-.main-container {
-    min-width: 1000px;
+body {
+  font-family: 'Pretendard Light', Arial, sans-serif;
+}
+
+.main-body {
+  color: #424242;
+}
+
+.v-card-subtitle {
+  font-weight: 500;
+  margin-bottom: 1.25rem; // 20px -> 1.25rem
+}
+  
+.v-icon {
+  vertical-align: middle;
+  margin-right: 0.25rem;
+}
+
+.markdown-content {
+    max-width: 50em;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+
+    h1,
+    h2,
+    h3 {
+      font-weight: bold;
+      margin-top: 1.2em;
+      margin-bottom: 0.8em;
+    }
+  
+    p {
+      margin-bottom: 1rem;
+      color: #424242;
+    }
+  
+    a {
+      color: #1976d2;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease;
+  
+      &:hover {
+        border-color: #1976d2;
+      }
+    }
+  
+    ul,
+    ol {
+      padding-left: 1.5em;
+      margin-bottom: 1rem;
+    }
+  
+    blockquote {
+      padding: 0.8em 1.2em;
+      margin: 1em 0;
+      background-color: #f5f5f5;
+      border-left: 0.3125rem solid #1976d2;
+    }
+  
+    code {
+      background-color: #f5f5f5;
+      padding: 0.2em 0.4em;
+      border-radius: 0.25rem;
+      font-size: 0.9em;
+      color: #e53935;
+  
+      pre & {
+        display: block;
+        padding: 1em;
+        border-radius: 0.25rem;
+        overflow-x: auto;
+      }
+    }
+  
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+      margin: 1rem 0;
+    }
+  
+    hr {
+      border: none;
+      border-top: 1px solid #e0e0e0;
+      margin: 2rem 0;
+    }
 }

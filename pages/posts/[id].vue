@@ -3,18 +3,22 @@
     <v-container class="main-container">
       <div v-if="pending">Loading...</div>
       <div v-else-if="error">Error: {{ error.message || 'An error occurred' }}</div>
-      <v-card class="pa-6" v-else-if="postData"
-        :title="postData.title"
-        v-html="renderedContent"
-      ></v-card>
+      <v-card
+        v-else
+        class="pa-6 markdown-content"
+        outlined
+        elevation="2"
+      >
+        <v-card-title class="text-h5 font-weight-bold">{{ postData?.title }}</v-card-title>
+        <v-divider></v-divider>
+        <v-card-text v-html="renderedContent" class="mt-4"></v-card-text>
+      </v-card>
     </v-container>
   </v-main>
 </template>
 
 <script setup lang="ts">
 import MarkdownIt from 'markdown-it';
-import { computed } from 'vue';
-import { useRoute, useFetch } from '#imports';
 
 const route = useRoute();
 const id = route.params.id;

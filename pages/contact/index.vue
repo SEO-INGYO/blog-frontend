@@ -1,11 +1,33 @@
 <template>
   <v-main>
     <v-container class="main-container">
-      <div>contact</div>
+      <v-row class="d-flex justify-center">
+        <v-col cols="12" md="8" lg="6">
+          <v-card class="pa-6" elevation="2">
+            <v-card-title class="text-h5 font-weight-bold">
+              Contact Me
+            </v-card-title>
+            <v-divider></v-divider>
+            <v-card-text>
+              <v-row justify="center">
+                <v-col cols="12" md="12">
+                  <v-icon left color="primary">mdi-email</v-icon> email@example.com
+                </v-col>
+              </v-row>
+              <v-row justify="center">
+                <v-col cols="12" md="12">
+                  <v-icon left color="primary">mdi-phone</v-icon> +123 456 7890
+                </v-col>
+              </v-row>
+              <v-row justify="center">
+                <v-col cols="12" md="12">
+                  <v-icon left color="primary">mdi-linkedin</v-icon> LinkedIn
+                </v-col>
+              </v-row>
+            </v-card-text>
+          </v-card>
+        </v-col>
+      </v-row>
     </v-container>
   </v-main>
-
 </template>
-
-<script setup lang="ts">
-</script>
